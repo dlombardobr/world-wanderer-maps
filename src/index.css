@@ -1,146 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
-@layer base {
-  :root {
-    --background: 220 26% 14%;
-    --foreground: 210 40% 98%;
-
-    --card: 220 24% 16%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 220 24% 16%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 200 100% 60%;
-    --primary-foreground: 220 26% 14%;
-    --primary-glow: 200 100% 75%;
-
-    /* Space-inspired gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(200, 100%, 60%), hsl(240, 100%, 70%));
-    --gradient-space: linear-gradient(180deg, hsl(220, 26%, 14%), hsl(240, 30%, 10%));
-    --gradient-aurora: linear-gradient(45deg, hsl(200, 100%, 60%), hsl(280, 80%, 65%), hsl(320, 70%, 70%));
-    
-    /* Atmospheric effects */
-    --shadow-glow: 0 0 40px hsl(200, 100%, 60%, 0.3);
-    --shadow-elevation: 0 10px 30px -10px hsl(200, 100%, 60%, 0.2);
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --secondary: 240 30% 20%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 240 25% 25%;
-    --muted-foreground: 210 20% 65%;
-
-    --accent: 240 100% 70%;
-    --accent-foreground: 220 26% 14%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 240 20% 30%;
-    --input: 240 25% 25%;
-    --ring: 200 100% 60%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 210 50% 8%;
-    --foreground: 210 40% 98%;
-
-    --card: 210 45% 10%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 210 45% 10%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 200 100% 70%;
-    --primary-foreground: 210 50% 8%;
-
-    --secondary: 240 25% 15%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 240 20% 20%;
-    --muted-foreground: 210 15% 60%;
-
-    --accent: 240 100% 75%;
-    --accent-foreground: 210 50% 8%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+body {
+  margin: 0;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
 
-  body {
-    @apply bg-background text-foreground;
-    background: var(--gradient-space);
-    min-height: 100vh;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
-  /* Map container styling */
-  .mapboxgl-canvas {
-    border-radius: 1rem;
-  }
+.glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 160, 220, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
 
-  .mapboxgl-control-container {
-    border-radius: 0.5rem;
-  }
+/* Leaflet-specific styles */
+.leaflet-container {
+  background-color: #f0f0f0 !important;
+}
 
-  .mapboxgl-ctrl-group {
-    border-radius: 0.75rem !important;
-    box-shadow: var(--shadow-elevation) !important;
-    background: hsl(var(--card)) !important;
-    border: 1px solid hsl(var(--border)) !important;
-  }
+.leaflet-control-attribution {
+  display: none !important;
+}
 
-  .mapboxgl-ctrl-group button {
-    background: transparent !important;
-    color: hsl(var(--foreground)) !important;
-    border: none !important;
-    transition: var(--transition-smooth);
-  }
+/* Route styles */
+.route-direct {
+  stroke: #00A0DC;
+  stroke-width: 2;
+  stroke-opacity: 0.8;
+}
 
-  .mapboxgl-ctrl-group button:hover {
-    background: hsl(var(--accent) / 0.1) !important;
-    color: hsl(var(--accent)) !important;
-  }
+.route-indirect {
+  stroke: #FFCC33;
+  stroke-width: 1.5;
+  stroke-opacity: 0.8;
+  stroke-dasharray: 5, 5;
+}
+
+/* Z-index fixes for UI elements */
+.leaflet-pane {
+  z-index: 400;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 990;
+}
+
+/* Modify the RouteFilters color scheme */
+.route-filter-active {
+  background-color: rgba(0, 160, 220, 0.3);
+  border-color: #00A0DC;
+}
+
+/* Add continent labels like in the reference image */
+.continent-label {
+  display: inline-block;
+  background: white;
+  color: #001428;
+  font-weight: bold;
+  padding: 10px 20px;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+  text-align: center;
+}
+
+/* Form elements custom styling */
+.form-checkbox {
+  appearance: none;
+  padding: 0;
+  color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  user-select: none;
+  flex-shrink: 0;
+  height: 1rem;
+  width: 1rem;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.form-checkbox:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+  border-color: transparent;
+  background-color: #1E40AF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-blue {
+  background: linear-gradient(90deg, #001428 0%, #004080 100%);
+}
+
+/* Logo animation */
+.logo-hover:hover {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
