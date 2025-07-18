@@ -8,9 +8,9 @@ export const zoomToRegion = (map: L.Map, filter: RouteFilter | RouteFilter[]): v
   const filtersArray = Array.isArray(filter) ? filter : [filter];
   
   if (!map || filtersArray.includes('all')) {
-    // For 'all' filter or no specific filter, show the world view
+    // For 'all' filter, show Asia region focused on China
     if (map) {
-      map.setView([20, 0], 2, { animate: true, duration: 1 });
+      map.setView([30, 115], 4, { animate: true, duration: 1 });
     }
     return;
   }

@@ -36,9 +36,9 @@ const LeafletMap = ({
     if (mapContainerRef.current && !mapRef.current) {
       // Create map instance
       mapRef.current = L.map(mapContainerRef.current, {
-        center: [20, 0],
-        zoom: 2,
-        minZoom: 2,
+        center: [30, 115], // Center on China/Asia region
+        zoom: 4, // Start more zoomed in to show Asia
+        minZoom: 3, // Prevent zooming out too far
         maxZoom: 8,
         worldCopyJump: true,
         attributionControl: false // Hide attribution for cleaner look
