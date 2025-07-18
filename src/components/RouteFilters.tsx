@@ -6,19 +6,14 @@ import FilterItem from './filters/FilterItem';
 import ContinentFilterGroup from './filters/ContinentFilterGroup';
 import { getFilterLabel, getContinentFilters } from '@/utils/filterTranslations';
 
-export type RouteFilter = 'all' | 'direct' | 'rotterdam' | 'singapore' | 'busan' | 'hong-kong' | 'chennai' | 'nhava-sheva' | 'shenzhen' | 'barcelona';
+export type RouteFilter = 'all' | 'direct' | 'shanghai' | 'qingdao' | 'shenzhen';
 
 export const filterColors: Record<RouteFilter, string> = {
   'all': '#FFFFFF',
   'direct': '#00A0DC',
-  'rotterdam': '#00A0DC', // blue-medium
-  'singapore': '#00A77F', // teal-medium
-  'busan': '#FFCC33',     // yellow
-  'hong-kong': '#00A0DC', // blue-medium
-  'chennai': '#00719C',   // teal-dark
-  'nhava-sheva': '#00A0DC', // blue-medium
-  'shenzhen': '#FFCC33',  // yellow
-  'barcelona': '#00A77F'  // teal-medium
+  'shanghai': '#00A0DC',  // blue-medium
+  'qingdao': '#FFCC33',   // yellow
+  'shenzhen': '#00A77F'   // teal-medium
 };
 
 type RouteFiltersProps = {
@@ -35,14 +30,9 @@ const RouteFilters = ({
   const filters: { id: RouteFilter; label: string }[] = [
     { id: 'all', label: getFilterLabel('all', mapLanguage) },
     { id: 'direct', label: getFilterLabel('direct', mapLanguage) },
-    { id: 'rotterdam', label: getFilterLabel('rotterdam', mapLanguage) },
-    { id: 'singapore', label: getFilterLabel('singapore', mapLanguage) },
-    { id: 'busan', label: getFilterLabel('busan', mapLanguage) },
-    { id: 'hong-kong', label: getFilterLabel('hong-kong', mapLanguage) },
-    { id: 'chennai', label: getFilterLabel('chennai', mapLanguage) },
-    { id: 'nhava-sheva', label: getFilterLabel('nhava-sheva', mapLanguage) },
+    { id: 'shanghai', label: getFilterLabel('shanghai', mapLanguage) },
+    { id: 'qingdao', label: getFilterLabel('qingdao', mapLanguage) },
     { id: 'shenzhen', label: getFilterLabel('shenzhen', mapLanguage) },
-    { id: 'barcelona', label: getFilterLabel('barcelona', mapLanguage) },
   ];
 
   const continentFilters = getContinentFilters(mapLanguage);

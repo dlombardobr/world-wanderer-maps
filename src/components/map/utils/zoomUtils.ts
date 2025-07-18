@@ -22,36 +22,22 @@ export const zoomToRegion = (map: L.Map, filter: RouteFilter | RouteFilter[]): v
     
     filtersArray.forEach(filter => {
       switch(filter) {
-        case 'rotterdam':
-          bounds.extend([51.9225, 4.47917]);
+        case 'shanghai':
+          bounds.extend([31.2304, 121.4737]); // Shanghai
+          bounds.extend([29.8683, 121.5440]); // Ningbo
           break;
-        case 'singapore':
-          bounds.extend([1.3521, 103.8198]);
-          break;
-        case 'busan':
-          bounds.extend([35.1796, 129.0756]);
-          break;
-        case 'hong-kong':
-          bounds.extend([22.3193, 114.1694]);
-          break;
-        case 'chennai':
-          bounds.extend([13.0827, 80.2707]);
-          break;
-        case 'nhava-sheva':
-          bounds.extend([18.9490, 72.9492]);
+        case 'qingdao':
+          bounds.extend([36.0671, 120.3826]); // Qingdao
           break;
         case 'shenzhen':
-          bounds.extend([22.5431, 114.0579]);
-          break;
-        case 'barcelona':
-          bounds.extend([41.3851, 2.1734]);
+          bounds.extend([22.5431, 114.0579]); // Shenzhen
           break;
         case 'direct':
-          // For direct routes, add major shipping hubs
-          bounds.extend([51.9225, 4.47917]); // Rotterdam
-          bounds.extend([1.3521, 103.8198]); // Singapore
-          bounds.extend([35.1796, 129.0756]); // Busan
-          bounds.extend([22.3193, 114.1694]); // Hong Kong
+          // For direct routes, add main Chinese ports
+          bounds.extend([31.2304, 121.4737]); // Shanghai
+          bounds.extend([29.8683, 121.5440]); // Ningbo
+          bounds.extend([36.0671, 120.3826]); // Qingdao
+          bounds.extend([22.5431, 114.0579]); // Shenzhen
           break;
       }
     });
@@ -77,42 +63,22 @@ export const zoomToRegion = (map: L.Map, filter: RouteFilter | RouteFilter[]): v
   let zoom = 2;
 
   switch(singleFilter) {
-    case 'rotterdam':
-      center = [51.9225, 4.47917]; // Rotterdam
-      zoom = 4;
+    case 'shanghai':
+      center = [30.5, 121]; // Center between Shanghai and Ningbo
+      zoom = 6;
       break;
-    case 'singapore':
-      center = [1.3521, 103.8198]; // Singapore
-      zoom = 4;
-      break;
-    case 'busan':
-      center = [35.1796, 129.0756]; // Busan
-      zoom = 4; 
-      break;
-    case 'hong-kong':
-      center = [22.3193, 114.1694]; // Hong Kong
-      zoom = 5;
-      break;
-    case 'chennai':
-      center = [13.0827, 80.2707]; // Chennai
-      zoom = 5;
-      break;
-    case 'nhava-sheva':
-      center = [18.9490, 72.9492]; // Nhava Sheva
+    case 'qingdao':
+      center = [36.0671, 120.3826]; // Qingdao
       zoom = 5;
       break;
     case 'shenzhen':
       center = [22.5431, 114.0579]; // Shenzhen
-      zoom = 5;
-      break;
-    case 'barcelona':
-      center = [41.3851, 2.1734]; // Barcelona
-      zoom = 5;
+      zoom = 6;
       break;
     case 'direct':
-      // For direct routes, let's see more of the world but focus a bit on major shipping lanes
-      center = [20, 40]; 
-      zoom = 3;
+      // For direct routes, focus on China region
+      center = [30, 115]; 
+      zoom = 4;
       break;
   }
 

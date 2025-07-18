@@ -6,14 +6,9 @@ export const getFilterLabel = (id: RouteFilter, mapLanguage: MapLanguage): strin
   const labels = {
     all: 'Todas as Rotas',
     direct: 'Rotas Diretas',
-    rotterdam: 'Via Rotterdam',
-    singapore: 'Via Singapore',
-    busan: 'Via Busan',
-    'hong-kong': 'Via Hong Kong',
-    chennai: 'Via Chennai',
-    'nhava-sheva': 'Via Nhava Sheva',
-    shenzhen: 'Via Shenzhen',
-    barcelona: 'Via Barcelona'
+    shanghai: 'Via Shanghai/Ningbo',
+    qingdao: 'Via Qingdao',
+    shenzhen: 'Via Shenzhen'
   };
   
   return labels[id];
@@ -21,15 +16,7 @@ export const getFilterLabel = (id: RouteFilter, mapLanguage: MapLanguage): strin
 
 export const getContinentFilters = (mapLanguage: MapLanguage) => [
   { 
-    continent: 'APAC', 
-    ports: ['singapore', 'busan', 'hong-kong', 'shenzhen', 'chennai'] 
-  },
-  { 
-    continent: 'Europe', 
-    ports: ['rotterdam', 'barcelona'] 
-  },
-  { 
-    continent: 'India', 
-    ports: ['nhava-sheva'] 
+    continent: 'Portos Chineses', 
+    ports: ['shanghai', 'qingdao', 'shenzhen'] 
   }
 ];
