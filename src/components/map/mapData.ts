@@ -46,27 +46,51 @@ export const routes: Route[] = [
   { id: 'direct-shenzhen', type: 'direct', from: 'shenzhen', to: 'shenzhen' },
   
   // Routes via Shanghai/Ningbo
-  { id: 'shanghai-hangzhou', type: 'indirect', from: 'shanghai', to: 'hangzhou', via: 'shanghai' },
-  { id: 'shanghai-suzhou', type: 'indirect', from: 'shanghai', to: 'suzhou', via: 'shanghai' },
-  { id: 'shanghai-yuyao', type: 'indirect', from: 'shanghai', to: 'yuyao', via: 'shanghai' },
-  { id: 'shanghai-chongqing', type: 'indirect', from: 'shanghai', to: 'chongqing', via: 'shanghai' },
-  { id: 'ningbo-taizhou', type: 'indirect', from: 'ningbo', to: 'taizhou-zhejiang', via: 'ningbo' },
-  { id: 'ningbo-yuhuan', type: 'indirect', from: 'ningbo', to: 'yuhuan', via: 'ningbo' },
+  // Shanghai to Shanghai and Ningbo
+  { id: 'shanghai-to-shanghai', type: 'indirect', from: 'shanghai', to: 'shanghai', via: 'shanghai' },
+  { id: 'shanghai-to-ningbo', type: 'indirect', from: 'shanghai', to: 'ningbo', via: 'shanghai' },
+  
+  // Hangzhou to Shanghai and Ningbo
+  { id: 'hangzhou-to-shanghai', type: 'indirect', from: 'hangzhou', to: 'shanghai', via: 'shanghai' },
+  { id: 'hangzhou-to-ningbo', type: 'indirect', from: 'hangzhou', to: 'ningbo', via: 'shanghai' },
+  
+  // Suzhou to Shanghai and Ningbo
+  { id: 'suzhou-to-shanghai', type: 'indirect', from: 'suzhou', to: 'shanghai', via: 'shanghai' },
+  { id: 'suzhou-to-ningbo', type: 'indirect', from: 'suzhou', to: 'ningbo', via: 'shanghai' },
+  
+  // Yuyao to Shanghai and Ningbo
+  { id: 'yuyao-to-shanghai', type: 'indirect', from: 'yuyao', to: 'shanghai', via: 'shanghai' },
+  { id: 'yuyao-to-ningbo', type: 'indirect', from: 'yuyao', to: 'ningbo', via: 'shanghai' },
+  
+  // Chongqing to Shanghai
+  { id: 'chongqing-to-shanghai', type: 'indirect', from: 'chongqing', to: 'shanghai', via: 'shanghai' },
   
   // Routes via Qingdao
-  { id: 'qingdao-dalian', type: 'indirect', from: 'qingdao', to: 'dalian', via: 'qingdao' },
-  { id: 'qingdao-shenyang', type: 'indirect', from: 'qingdao', to: 'shenyang', via: 'qingdao' },
-  { id: 'qingdao-changchun', type: 'indirect', from: 'qingdao', to: 'changchun', via: 'qingdao' },
-  { id: 'qingdao-hebi', type: 'indirect', from: 'qingdao', to: 'hebi', via: 'qingdao' },
-  { id: 'qingdao-binzhou', type: 'indirect', from: 'qingdao', to: 'binzhou', via: 'qingdao' },
-  { id: 'qingdao-mengzhou', type: 'indirect', from: 'qingdao', to: 'mengzhou', via: 'qingdao' },
-  { id: 'qingdao-nanyang', type: 'indirect', from: 'qingdao', to: 'nanyang', via: 'qingdao' },
+  // Dalian to Qingdao
+  { id: 'dalian-to-qingdao', type: 'indirect', from: 'dalian', to: 'qingdao', via: 'qingdao' },
+  
+  // Shenyang to Qingdao
+  { id: 'shenyang-to-qingdao', type: 'indirect', from: 'shenyang', to: 'qingdao', via: 'qingdao' },
+  
+  // Changchun to Qingdao
+  { id: 'changchun-to-qingdao', type: 'indirect', from: 'changchun', to: 'qingdao', via: 'qingdao' },
+  
+  // Hebi, Binzhou, Mengzhou, Nanyang to Qingdao
+  { id: 'hebi-to-qingdao', type: 'indirect', from: 'hebi', to: 'qingdao', via: 'qingdao' },
+  { id: 'binzhou-to-qingdao', type: 'indirect', from: 'binzhou', to: 'qingdao', via: 'qingdao' },
+  { id: 'mengzhou-to-qingdao', type: 'indirect', from: 'mengzhou', to: 'qingdao', via: 'qingdao' },
+  { id: 'nanyang-to-qingdao', type: 'indirect', from: 'nanyang', to: 'qingdao', via: 'qingdao' },
   
   // Routes via Shenzhen
-  { id: 'shenzhen-foshan', type: 'indirect', from: 'shenzhen', to: 'foshan', via: 'shenzhen' },
-  { id: 'shenzhen-taishan', type: 'indirect', from: 'shenzhen', to: 'taishan', via: 'shenzhen' },
-  { id: 'shenzhen-hengyang', type: 'indirect', from: 'shenzhen', to: 'hengyang', via: 'shenzhen' },
-  { id: 'shenzhen-changsha', type: 'indirect', from: 'shenzhen', to: 'changsha', via: 'shenzhen' },
-  { id: 'shenzhen-zhaoqing', type: 'indirect', from: 'shenzhen', to: 'zhaoqing', via: 'shenzhen' },
-  { id: 'shenzhen-liuyang', type: 'indirect', from: 'shenzhen', to: 'liuyang', via: 'shenzhen' }
+  // Foshan to Shenzhen
+  { id: 'foshan-to-shenzhen', type: 'indirect', from: 'foshan', to: 'shenzhen', via: 'shenzhen' },
+  
+  // Taishan to Shenzhen
+  { id: 'taishan-to-shenzhen', type: 'indirect', from: 'taishan', to: 'shenzhen', via: 'shenzhen' },
+  
+  // Hengyang to Shenzhen
+  { id: 'hengyang-to-shenzhen', type: 'indirect', from: 'hengyang', to: 'shenzhen', via: 'shenzhen' },
+  
+  // Changsha to Shenzhen
+  { id: 'changsha-to-shenzhen', type: 'indirect', from: 'changsha', to: 'shenzhen', via: 'shenzhen' }
 ];
